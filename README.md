@@ -48,13 +48,13 @@ See the "runexample_haplos.R" file for running the example file
 
 - hapgenomatrix(HAP_ALLELES,HAP_FREQ,MAP_info,hapfreqThresh=0.05,outname)  
     ... HAP_ALLELES - R-object that specify the haploytpes generated with the 'makehaplotypes' function above  
-    ... HAP_FREQ - R-object that specify that contains the haploytpe frequecies - also generated with 'makehaplotypes' function
-    ... hapfreqThresh - threshold for haplotypes in a block
-    ... outname - output name as plink ped+map files will be generated
+    ... HAP_FREQ - R-object that specify that contains the haploytpe frequecies - also generated with 'makehaplotypes' function  
+    ... hapfreqThresh - threshold for haplotypes in a block  
+    ... outname - output name as plink ped+map files will be generated  
 
-- hapGRM(haplomatrix,outputType,method='vanRaden1',outname)
+- hapGRM(haplomatrix,outputType,method='vanRaden1',outname)  
     ... haplomatrix - R-object that specify the haploytpes generated with the 'hapgenomatrix' function above  
-    ... outputType - should the output be a full-matrix [use -'matrix'] or row and column wise [use-'rowcolwise']
-    ... method - vanRaden (2008) method 1 (ZZ'/sum(2pq)) [use - 'vanRaden1'] or method 2 (ZDZ'/Nsnps) [use - 'vanRaden2']
-    ... outname - output name for the grm
+    ... outputType - should the output be a full-matrix [use -'matrix'] or row and column wise [use-'rowcolwise']  
+    ... method - vanRaden (2008) method 1 (ZZ'/sum(2pq)) [use - 'vanRaden1'] or method 2 (ZDZ'/Nsnps) [use - 'vanRaden2']  
+    ... outname - output name for the grm  
 
