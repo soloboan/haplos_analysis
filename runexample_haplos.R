@@ -1,7 +1,7 @@
 setwd("")
 
 ## source the functions
-source('getblockhaploview.R')
+source('haplotypeBLgenogrm.R')
 
 ## import the output file of Haploview and extract the haplotype blocks
 haploblocks <- getblockhaploview(haploviewfile='example_haplo.blocks')
