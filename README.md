@@ -5,11 +5,11 @@ The outputs from these R script includes :
   - extract haplotypes with a haplo-block and converting that into 1) genotype counts (0,1,2) 2) plink - ped+map file  
   - compute genomic relationship with the haplotypes (coded as genotype counts) using vanRaden method 1 or 2  
 
-Note:: 
-  haplo-block = n markers make a block
-  haplotypes = the haplotypes within a block -  (maximum number of haplotypes is 2* number of samples)
+Note::  
+  haplo-block = n markers make a block  
+  haplotypes = the haplotypes within a block -  (maximum number of haplotypes is 2* number of samples)  
 
-R-scripts  
+## R-scripts  
 A) haplotypeBLgenogrm.R - contains 4 R-functions
     - getblockhaploview(haploviewfile)
     - makehaplotypes(phasedbgl,mapinfohap,hapblocks)
@@ -38,7 +38,7 @@ Data requirement
 See the "runexample_haplos.R" file for running the example file  
 
 ## The funtions  
-- getblockhaploview(haploviewfile) :::
+- getblockhaploview(haploviewfile)  
     ... haploviewfile - the output of haloview (haplo-blocks)  
 
 - makehaplotypes(phasedbgl,mapinfohap,hapblocks)  
