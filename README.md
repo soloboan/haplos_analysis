@@ -1,4 +1,4 @@
-# haplotype Analysis
+# haplotype Analysis  
 Script to undertake haplotype analysis  
 The scripts are R-functions developed to import haploview output and phased data (beagle v3)  
 The outputs from these R script includes :  
@@ -10,14 +10,14 @@ Note::
   haplotypes = the haplotypes within a block -  (maximum number of haplotypes is 2* number of samples)  
 
 ## R-scripts  
-A) haplotypeBLgenogrm.R - contains 4 R-functions
-    - getblockhaploview(haploviewfile)
-    - makehaplotypes(phasedbgl,mapinfohap,hapblocks)
-    - hapgenomatrix(HAP_ALLELES,HAP_FREQ,MAP_info,hapfreqThresh=0.05,outname)
-    - hapGRM(haplomatrix,outputType,method='vanRaden1',outname)
-B) runexample_haplos.R - running the example file
+A) haplotypeBLgenogrm.R - contains 4 R-functions  
+    - getblockhaploview(haploviewfile)  
+    - makehaplotypes(phasedbgl,mapinfohap,hapblocks)  
+    - hapgenomatrix(HAP_ALLELES,HAP_FREQ,MAP_info,hapfreqThresh=0.05,outname)   
+    - hapGRM(haplomatrix,outputType,method='vanRaden1',outname)  
+B) runexample_haplos.R - running the example file  
 
-Example files 
+Example files  
 A) example_haplo.ped + example_haplo.map + example_haplo.pheno - Plink --ped + --map + --pheno file   
 B) example_haplo.info - haploview info file  
 C) example_haplo.blocks - output of haloview (haplo-blocks)  
