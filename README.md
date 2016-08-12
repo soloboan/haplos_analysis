@@ -48,7 +48,7 @@ See the "runexample_haplos.R" file for running the example file
 
 - hapgenomatrix(HAP_ALLELES,HAP_FREQ,MAP_info,hapfreqThresh=0.05,outname)  
     ... HAP_ALLELES - R-object that specify the haploytpes generated with the 'makehaplotypes' function above  
-    ... HAP_FREQ - R-object that specify that contains the haploytpe frequecies - also generated with 'makehaplotypes' function  
+    ... HAP_FREQ - R-object that contains the haploytpe frequecies - also generated with 'makehaplotypes' function  
     ... hapfreqThresh - threshold for haplotypes in a block  
     ... outname - output name as plink ped+map files will be generated  
 
