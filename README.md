@@ -1,4 +1,4 @@
-# haplos_analysis
+# haplotype Analysis
 Script to undertake haplotype analysis  
 The scripts are R-functions developed to import haploview output and phased data (beagle v3)  
 The outputs from these R script includes :  
@@ -37,7 +37,7 @@ Data requirement
 
 See the "runexample_haplos.R" file for running the example file  
 
-#### The funtions  
+## The funtions  
 - getblockhaploview(haploviewfile) :::
     ... haploviewfile - the output of haloview (haplo-blocks)  
 
