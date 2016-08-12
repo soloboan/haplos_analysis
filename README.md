@@ -12,15 +12,15 @@ Note::
 ## R-scripts  
 A) haplotypeBLgenogrm.R - contains 4 R-functions  
     - getblockhaploview(haploviewfile)  
-    - makehaplotypes(phasedbgl,mapinfohap,hapblocks)  
-    - hapgenomatrix(HAP_ALLELES,HAP_FREQ,MAP_info,hapfreqThresh=0.05,outname)   
-    - hapGRM(haplomatrix,outputType,method='vanRaden1',outname)  
+    - makehaplotypes(phasedbgl, mapinfohap, hapblocks)  
+    - hapgenomatrix(HAP_ALLELES, HAP_FREQ, MAP_info, hapfreqThresh=0.05, outname)   
+    - hapGRM(haplomatrix, outputType, method='vanRaden1', outname)  
 B) runexample_haplos.R - running the example file  
 
 Example files  
 A) example_haplo.ped + example_haplo.map + example_haplo.pheno - Plink --ped + --map + --pheno file   
 B) example_haplo.info - haploview info file  
-C) example_haplo.blocks - output of haloview (haplo-blocks)  
+C) example_haplo.blocks - output of haploview (haplo-blocks)  
 D) bgl.phased.gz - Beagle v3 phased data  
 
 Procees (external)  
@@ -39,20 +39,20 @@ See the "runexample_haplos.R" file for running the example file
 
 ## The funtions  
 - getblockhaploview(haploviewfile)  
-    ... haploviewfile - the output of haloview (haplo-blocks)  
+    ... haploviewfile - the output of haploview (haplo-blocks)  
 
-- makehaplotypes(phasedbgl,mapinfohap,hapblocks)  
+- makehaplotypes(phasedbgl, mapinfohap, hapblocks)  
     ... phasedbgl - Beagle v3 phased data  
     ... mapinfohap - marker MAP information (same order as the genotypes used in the haploview analysis)  
     ... hapblocks - the R- object of haplo-blocks extracted with the 'getblockhaploview' function above  
 
-- hapgenomatrix(HAP_ALLELES,HAP_FREQ,MAP_info,hapfreqThresh=0.05,outname)  
+- hapgenomatrix(HAP_ALLELES, HAP_FREQ, MAP_info, hapfreqThresh=0.05, outname)  
     ... HAP_ALLELES - R-object that specify the haploytpes generated with the 'makehaplotypes' function above  
     ... HAP_FREQ - R-object that contains the haploytpe frequecies - also generated with 'makehaplotypes' function  
     ... hapfreqThresh - threshold for haplotypes in a block  
     ... outname - output name as plink ped+map files will be generated  
 
-- hapGRM(haplomatrix,outputType,method='vanRaden1',outname)  
+- hapGRM(haplomatrix, outputType, method='vanRaden1', outname)  
     ... haplomatrix - R-object that specify the haploytpes generated with the 'hapgenomatrix' function above  
     ... outputType - should the output be a full-matrix [use -'matrix'] or row and column wise [use-'rowcolwise']  
     ... method - vanRaden (2008) method 1 (ZZ'/sum(2pq)) [use - 'vanRaden1'] or method 2 (ZDZ'/Nsnps) [use - 'vanRaden2']  
