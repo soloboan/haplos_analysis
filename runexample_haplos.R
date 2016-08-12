@@ -4,10 +4,10 @@ setwd("")
 source('getblockhaploview.R')
 
 ## import the output file of Haploview and extract the haplotype blocks
-haploblocks <- getblockhaploview(haploviewfile='blocks.txt')
+haploblocks <- getblockhaploview(haploviewfile='example_haplo.blocks')
 
 ## after phasing your data with beagle extract the haplotypes for each block
-haplos.allele <- makehaplotypes(phasedbgl='chr21.bgl.phased.gz',mapinfohap='haplo.map',hapblocks=haploblocks)
+haplos.allele <- makehaplotypes(phasedbgl='bgl.phased.gz',mapinfohap='example_haplo.map',hapblocks=haploblocks)
 
 ## to get the blocks from the above script extract them from the out list as:
 ## block 1...n are list 1...n
