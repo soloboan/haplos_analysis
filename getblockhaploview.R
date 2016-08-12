@@ -26,8 +26,8 @@ makehaplotypes<- function(phasedbgl,mapinfohap,hapblocks){
   nhaps <- nrow(hapgeno.bgl)
   animids <- rownames(hapgeno.bgl)[seq(1,nrow(hapgeno.bgl),2)]
   
-  for(j in 1:nrow(extractHAPs)){
-    snpids <- map[c(extractHAPs[j,2]:extractHAPs[j,3]),2]
+  for(j in 1:nrow(hapblocks)){
+    snpids <- map[c(hapblocks[j,2]:hapblocks[j,3]),2]
     ### mat haplo
     dathaplo <- hapgeno.bgl[seq(1,nrow(hapgeno.bgl),2),snpids]
     mat.haps <- data.frame(mathaplo=apply(dathaplo,1,stringhaps))
@@ -112,7 +112,7 @@ hapgenomatrix <- function(HAP_ALLELES,HAP_FREQ,MAP_info,hapfreqThresh=0.05,outna
   return(haplomatrix)
 }
 
-hapGRM <- function(haplomatrix,method='vanRaden1',outname){
+hapGRM <- function(haplomatrix,method='vanRaden1',outputType='rowcolwise',outname){
   animids <- as.vector(haplomatrix[,2])
   M=data.matrix(haplomatrix[,-1:-2])
   if(method=='vanRaden1'){
@@ -133,8 +133,17 @@ hapGRM <- function(haplomatrix,method='vanRaden1',outname){
   }
   colnames(G) <- animids
   rownames(G) <- animids
-  write.table(G,paste(outname,'.grm',sep=''),quote=F,col.names=F,row.names=F)
+  if(outputType=='rowcolwise'){
   require(reshape2)
   rowiseG <- melt(G)
+  idsnum <- data.frame(IID=unclass(as.factor(c(rowiseG[,1],rowiseG[,2]))))
+  idsnumL <- nrow(idsnum)
+  idsnumbind <- cbind(idsnum[1:(idsnumL/2),],idsnum[(1+(idsnumL/2)):idsnumL,])
+  rowiseG <- cbind(idsnumbind,rowiseG)
+  write.table(rowiseG,paste(outname,'.grm',sep=''),quote=F,col.names=F,row.names=F)
   return(rowiseG)
+  } else {
+  write.table(G,paste(outname,'.grm',sep=''),quote=F,col.names=F,row.names=F)
+  return(G)
+  }
 }
