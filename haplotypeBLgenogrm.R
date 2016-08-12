@@ -117,7 +117,7 @@ hapGRM <- function(haplomatrix,method='vanRaden1',outputType='rowcolwise',outnam
   M=data.matrix(haplomatrix[,-1:-2])
   if(method=='vanRaden1'){
     Z=scale(M,center=T,scale=F)
-    ZZp <- Z %*% t(Z)
+    ZZp <- tcrossprod(Z)
     p=colMeans(M)/2
     K=2*sum(p*(1-p))
     G=ZZp/K
@@ -125,7 +125,7 @@ hapGRM <- function(haplomatrix,method='vanRaden1',outputType='rowcolwise',outnam
     #hist(G[lower.tri(G,diag=F)],breaks=100)
   } else if (method=='vanRaden2'){
     Z=scale(M,center=T,scale=T)
-    ZZp <- Z %*% t(Z)
+    ZZp <- tcrossprod(Z)
     K=ncol(M)
     G=ZZp/K
     #hist(diag(G),breaks=100)
