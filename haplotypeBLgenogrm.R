@@ -133,14 +133,14 @@ hapGRM <- function(haplomatrix,method='vanRaden1',outputType='rowcolwise',outnam
   }
   colnames(G) <- animids
   rownames(G) <- animids
-  if(outputType=='rowcolwise'){
-  require(reshape2)
-  rowiseG <- melt(G)
-  idsnum <- data.frame(IID=unclass(as.factor(c(rowiseG[,1],rowiseG[,2]))))
-  idsnumL <- nrow(idsnum)
-  idsnumbind <- cbind(idsnum[1:(idsnumL/2),],idsnum[(1+(idsnumL/2)):idsnumL,])
-  rowiseG <- cbind(idsnumbind,rowiseG)
-  write.table(rowiseG,paste(outname,'.grm',sep=''),quote=F,col.names=F,row.names=F)
+  if(outputType=='asreml'){
+    cat('....... Output file preparation started ..........\n')
+      Glist <- as.data.frame(which(row(G)>=col(G),arr.ind=TRUE))
+      Glist$G <- G[lower.tri(G,diag=T)]
+      Glist <- Glist[,c(2,1,3)]
+      Glist <- Glist[order(Glist[,2],Glist[,1]),]
+      Glist <- Glist[,c(2,1,3)]
+      write.table(Glist,paste(outname,'.grm',sep=''),quote=F,col.names=F,row.names=F)
   return(rowiseG)
   } else {
   write.table(G,paste(outname,'.grm',sep=''),quote=F,col.names=F,row.names=F)
